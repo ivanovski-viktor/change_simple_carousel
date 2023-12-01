@@ -4,9 +4,6 @@ const carousel = document.querySelector(".carousel");
 const nextBtn = document.querySelector("#nextBtn");
 const prevBtn = document.querySelector("#prevBtn");
 
-nextBtn.addEventListener("click", () => changeSlide(1));
-prevBtn.addEventListener("click", () => changeSlide(-1));
-
 function showSlide(index) {
   // recalculate the currentSlide
   currentSlide = index % totalSlides;
@@ -23,9 +20,9 @@ function showSlide(index) {
       carousel.style.transform = `translateX(-200%)`;
       break;
     default:
-      currentSlide = 2;
+      currentSlide = totalSlides - 1;
       carousel.style.transform = `translateX(-200%)`;
-      console.log(currentSlide);
+    // console.log(currentSlide);
   }
 }
 
@@ -37,3 +34,6 @@ function changeSlide(direction) {
   // call showSlide with index
   showSlide(index);
 }
+//splidejs za gotov slider koristenje
+
+export { changeSlide, nextBtn, prevBtn };
